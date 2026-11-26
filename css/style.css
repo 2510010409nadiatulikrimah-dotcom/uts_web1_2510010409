@@ -1,0 +1,454 @@
+/* =========================================
+   1. VARIABEL WARNA & RESET DASAR
+   Skema Warna (4 Warna Utama):
+   - Merah Cabai : #c0392b
+   - Hijau Daun  : #27ae60
+   - Krem Hangat : #fdf8f5
+   - Gelap Teks  : #2c3e50
+========================================= */
+:root {
+    --primary-red: #c0392b;
+    --accent-green: #27ae60;
+    --bg-cream: #fdf8f5;
+    --dark-text: #2c3e50;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-text);
+    background-color: #ffffff;
+    line-height: 1.6;
+    /* Kompensasi tinggi navbar fixed agar konten tidak tertutup */
+    padding-top: 72px;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   2. NAVBAR (POSITION: FIXED)
+========================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary-red);
+    color: #ffffff;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 72px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    border-radius: 30px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   3. HERO SECTION (FLEXBOX TERPUSAT)
+========================================= */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 420px;
+    /* Lapisan warna merah agak transparan (0.78) di atas foto lokal */
+    background: linear-gradient(rgba(146, 43, 33, 0.78), rgba(192, 57, 43, 0.78)), 
+                url('../img/bupati\ tapin.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    padding: 40px 20px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 28px auto;
+    opacity: 0.95;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--accent-green);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.btn-cta:hover {
+    background-color: #219150;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   4. SECTION & GRID KARTU PRODUK
+========================================= */
+.section {
+    padding: 60px 0;
+}
+
+.section-alt {
+    background-color: var(--bg-cream);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 1.85rem;
+    color: var(--primary-red);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+    color: var(--dark-text);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(44, 62, 80, 0.16);
+}
+
+/* Placeholder Gambar Produk Lokal Berwarna */
+.card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.placeholder-1 { background-color: #c0392b; }
+.placeholder-2 { background-color: #27ae60; }
+.placeholder-3 { background-color: #a93226; }
+.placeholder-4 { background-color: #2c3e50; }
+.placeholder-5 { background-color: #d35400; }
+.placeholder-6 { background-color: #1e8449; }
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-body h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--accent-green);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.card-body p:last-of-type {
+    font-size: 0.92rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.btn-card {
+    display: block;
+    text-align: center;
+    background-color: var(--primary-red);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background-color 0.25s ease;
+}
+
+.btn-card:hover {
+    background-color: #962d22;
+}
+
+/* =========================================
+   5. LIST KEUNGGULAN (SECTION TAMBAHAN)
+========================================= */
+.feature-list {
+    max-width: 800px;
+    margin: 25px auto 0 auto;
+    padding-left: 20px;
+}
+
+.feature-list li {
+    margin-bottom: 14px;
+    font-size: 1rem;
+}
+
+/* =========================================
+   6. FORM KONTAK (FIELDSET & LEGEND)
+========================================= */
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--bg-cream);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.08);
+}
+
+.contact-form fieldset {
+    border: 2px solid var(--primary-red);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.contact-form legend {
+    font-weight: 700;
+    color: var(--primary-red);
+    padding: 0 10px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-red);
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.btn-submit,
+.btn-reset {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.btn-submit {
+    background-color: var(--accent-green);
+}
+
+.btn-submit:hover {
+    background-color: #219150;
+}
+
+.btn-reset {
+    background-color: var(--dark-text);
+}
+
+.btn-reset:hover {
+    background-color: #1a252f;
+}
+
+/* =========================================
+   7. TABEL DAFTAR LAYANAN & PETA LOKASI
+========================================= */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.08);
+}
+
+caption {
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--dark-text);
+}
+
+th, td {
+    border: 1px solid #dcdde1;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+thead {
+    background-color: var(--primary-red);
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--bg-cream);
+}
+
+.table-note {
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--primary-red);
+    font-weight: 600;
+}
+
+.map-box {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.12);
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 320px;
+    border: 0;
+    display: block;
+}
+
+/* =========================================
+   8. FOOTER
+========================================= */
+footer {
+    background-color: var(--dark-text);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 0.92rem;
+}
+
+/* =========================================
+   9. RESPONSIVE DESIGN (MEDIA QUERY <= 768PX)
+========================================= */
+@media (max-width: 768px) {
+    body {
+        /* Menyesuaikan kompensasi saat navbar berubah menjadi vertikal */
+        padding-top: 125px;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        padding: 12px 0;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-content p {
+        font-size: 0.98rem;
+    }
+
+    /* Kartu produk menjadi 1 kolom di layar kecil */
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}

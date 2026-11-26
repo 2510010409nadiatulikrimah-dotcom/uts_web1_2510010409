@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak &amp; Layanan - UKM Cabai Hiyung Tapin | Nadiatul Ikrimah</title>
+    <!-- Menghubungkan Google Fonts & File CSS Eksternal -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER & NAVBAR FIXED -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="img/cabai.png" alt="Logo UKM Cabai Hiyung Tapin" class="logo-img">
+                <span>Cabai Hiyung Tapin</span>
+            </a>
+            <nav aria-label="Navigasi Utama">
+                <ul class="nav-links">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.html#produk">Produk</a></li>
+                    <li><a href="kontak.html" class="active">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main>
+        <!-- BAGIAN FORM KONTAK -->
+        <section class="section">
+            <div class="container">
+                <h1 class="section-title">Form Kontak &amp; Pemesanan</h1>
+                <p class="section-subtitle">Silakan isi formulir di bawah ini untuk pemesanan produk, kemitraan reseller, atau pertanyaan seputar UKM Cabai Hiyung.</p>
+
+                <form action="#" method="post" class="contact-form">
+                    <fieldset>
+                        <legend>Formulir Pelanggan UKM Cabai Hiyung</legend>
+
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap *</label>
+                            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Alamat Email *</label>
+                            <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subjek">Subjek Layanan</label>
+                            <select id="subjek" name="subjek">
+                                <option value="eceran">Pemesanan Eceran / Oleh-Oleh</option>
+                                <option value="grosir">Pemesanan Grosir / Restoran</option>
+                                <option value="reseller">Pendaftaran Mitra Reseller</option>
+                                <option value="kunjungan">Kunjungan Edukasi Kebun Cabai Hiyung</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pesan">Pesan / Detail Pesanan</label>
+                            <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan nama produk, jumlah pesanan, atau alamat pengiriman..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-submit">Kirim Pesan</button>
+                            <button type="reset" class="btn-reset">Reset</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+
+        <!-- BAGIAN TABEL DAFTAR LAYANAN -->
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="section-title">Tabel Daftar Layanan &amp; Paket UKM</h2>
+                <div class="table-wrapper">
+                    <table>
+                        <caption>Daftar Paket Layanan dan Pemesanan UKM Cabai Hiyung Kabupaten Tapin</caption>
+                        <thead>
+                            <tr>
+                                <th>Jenis Layanan / Paket</th>
+                                <th>Harga</th>
+                                <th>Durasi / Estimasi Proses</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Paket Eceran Oleh-Oleh Khas Tapin</td>
+                                <td>Mulai Rp 22.000</td>
+                                <td>1 Hari Kerja (Siap Kirim)</td>
+                            </tr>
+                            <tr>
+                                <td>Suplai Cabai Segar Rutin (Minimal 5 Kg)</td>
+                                <td>Rp 85.000 / Kg</td>
+                                <td>1 - 2 Hari (Sesuai Jadwal Panen)</td>
+                            </tr>
+                            <tr>
+                                <td>Paket Kemitraan Reseller Kalimantan</td>
+                                <td>Rp 500.000 / Paket</td>
+                                <td>2 - 3 Hari Pengemasan</td>
+                            </tr>
+                            <tr>
+                                <td>Paket Wisata Edukasi Agrowisata Desa Hiyung</td>
+                                <td>Rp 150.000 / Rombongan</td>
+                                <td>Setengah Hari (08.00 - 12.00 WITA)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="table-note">* Harga khusus untuk pemesanan partai besar di wilayah Banjarbaru, Banjarmasin, dan Rantau.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- BAGIAN LOKASI / PETA -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Lokasi Sentra UKM Desa Hiyung</h2>
+                <p class="section-subtitle">Desa Hiyung, Kecamatan Tapin Tengah, Kabupaten Tapin, Kalimantan Selatan.</p>
+                <div class="map-box">
+                    <iframe 
+                        title="Peta Lokasi Sentra Cabai Hiyung Kabupaten Tapin"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=115.0550%2C-2.9750%2C115.1350%2C-2.9200&amp;layer=mapnik&amp;marker=-2.9475%2C115.0950" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 UKM Cabai Hiyung Tapin | Nadiatul Ikrimah - 2510010409 - 3B Nonreg BJB</p>
+        </div>
+    </footer>
+
+</body>
+</html>
